@@ -3,7 +3,26 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import Class6 from "./Class6";
 import Success from "./success";
+
+import  { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // <-- add useNavigate
+
 const Home = () => {
+
+    const navigate = useNavigate(); // <-- hook to navigate programmatically
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent default form submission
+    const form = e.target;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(() => navigate("/success")) // navigate to success page
+      .catch((error) => alert(error));
+  };
   return (
     <div>
       {/* Header */}
@@ -55,9 +74,9 @@ const Home = () => {
             method="POST" 
             data-netlify="true" 
             netlify-honeypot="bot-field"
-            action="/success"   // Add this
+            onSubmit={handleSubmit} // <-- use React submission
             className="feedback-form"
->
+            >
 
           <input type="hidden" name="form-name" value="feedback" />
           <p hidden>
