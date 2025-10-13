@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-
+import Class6 from "./Class6";
+import Success from "./success";
 const Home = () => {
   return (
     <div>
