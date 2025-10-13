@@ -5,7 +5,7 @@ import Class6 from "./Class6";
 import Success from "./success";
 
 import  { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // <-- add useNavigate
+import { useNavigate } from "react-router-dom"; // <-- add useNavigate
 
 const Home = () => {
 
