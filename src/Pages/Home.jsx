@@ -49,13 +49,15 @@ const Home = () => {
       {/* Feedback Section */}
       <section id="feedback" className="feedback">
         <h2>Teacher Feedback Form</h2>
-        <form 
-          name="feedback" 
-          method="POST" 
-          data-netlify="true" 
-          netlify-honeypot="bot-field" 
-          className="feedback-form"
-        >
+       <form 
+            name="feedback" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            action="/success"   // Add this
+            className="feedback-form"
+>
+
           <input type="hidden" name="form-name" value="feedback" />
           <p hidden>
             <label>Don’t fill this out: <input name="bot-field" /></label>

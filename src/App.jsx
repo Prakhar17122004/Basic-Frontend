@@ -13,6 +13,8 @@ function App() {
         <Route path="/class6" element={<Class6 />} />
         <Route path="/class7" element={<Class7 />} />
         <Route path="/class8" element={<Class8 />} />
+        <Route path="/success" element={<Success />} />
+
       </Routes>
     </Router>
   );
