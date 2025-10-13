@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import Class6 from "./Class6";
 import Success from "./success";
 
 import  { useState } from "react";
-import { useNavigate } from "react-router-dom"; // <-- add useNavigate
 
 const Home = () => {
 
