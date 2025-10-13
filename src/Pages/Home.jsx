@@ -12,7 +12,7 @@ const handleFeedbackSubmit = async (e) => {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/send-feedback", {
+    const res = await fetch("https://basic-backend-3.onrender.com/send-feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
