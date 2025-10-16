@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Replace with your Unsplash Access Key
 const UNSPLASH_KEY = "d_Z_7LVinN-C_6wO6tD-Xm1xUSO4QG2T0DErxuN6i9s";
@@ -30,10 +31,11 @@ const Class6 = () => {
   const [hindiMeaning, setHindiMeaning] = useState("");
   const [loadingHindi, setLoadingHindi] = useState(false);
 
-  const toggleChapter = (idx) => {
-    setOpenChapter(openChapter === idx ? null : idx);
-  };
+  const navigate = useNavigate();
 
+  const handleChapterClick = (idx) => {
+    navigate(`/class6/chapter${idx + 1}`);
+  };
   const fetchImage = async (wordObj) => {
     setSelectedWord(wordObj);
     setImageUrl("");
@@ -100,8 +102,8 @@ const Class6 = () => {
       <ul style={{ listStyle: "none", padding: 0, marginTop: "2rem" }}>
         {chaptersData.map((chapter, idx) => (
           <li key={idx} style={{ marginBottom: "1.5rem" }}>
-            <div
-              onClick={() => toggleChapter(idx)}
+           <div
+              onClick={() => handleChapterClick(idx)}
               style={{
                 cursor: "pointer",
                 fontWeight: "bold",
@@ -111,11 +113,11 @@ const Class6 = () => {
                 background: "#E0F2FE",
                 color: "#1E3A8A",
                 boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                transition: "all 0.3s",
               }}
             >
               {chapter.name}
             </div>
+
 
             {openChapter === idx && (
               <ul style={{ marginLeft: "1.5rem", marginTop: "0.8rem" }}>

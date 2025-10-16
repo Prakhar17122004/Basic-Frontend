@@ -26,7 +26,10 @@ const Home = () => {
     <div>
       {/* Header */}
       <header className="header">
-        <div className="logo">📘 Word Wise</div>
+       <div className="logo">
+  <img  src="/Gemini_Generated_Image_ulo9kuulo9kuulo9.png" alt="Word Wise Logo" style={{ height: "50px" }} />
+</div>
+
         <nav>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
