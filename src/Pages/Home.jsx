@@ -43,21 +43,7 @@ const Home = () => {
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <ul className="nav-links">
-             <li>
-      <button 
-        onClick={() => setMenuOpen(false)} 
-        style={{
-          background: "transparent",
-          border: "none",
-          fontSize: "1.2rem",
-          cursor: "pointer",
-          alignSelf: "flex-end",
-          marginBottom: "0.5rem"
-        }}
-      >
-        ✕
-      </button>
-    </li>
+   
             <li>
               <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
             </li>
