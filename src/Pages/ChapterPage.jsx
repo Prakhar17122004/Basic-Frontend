@@ -1,32 +1,251 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UNSPLASH_KEY = "d_Z_7LVinN-C_6wO6tD-Xm1xUSO4QG2T0DErxuN6i9s";
 
-const chaptersData = [
-  {
-    name: "Chapter 1",
-    words: [
-      { word: "Bicycle", english: "A two-wheeled vehicle powered by pedaling" },
-      { word: "Laptop", english: "A portable computer" },
-      { word: "Guitar", english: "A stringed musical instrument" },
-    ],
-  },
-  {
-    name: "Chapter 2",
-    words: [
-      { word: "Backpack", english: "A bag carried on the back" },
-      { word: "Microscope", english: "A device to see tiny objects" },
-      { word: "Camera", english: "A device for taking photos" },
-    ],
-  },
-];
 
 const ChapterPage = () => {
-  const { chapterId } = useParams();
+  const { classId, chapterId } = useParams(); // ✅ Correct position
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+const allClasses = {
+  class7: [
+    {
+      name: "Thank You God (Poem)",
+      words: [
+        { word: "creature", english: "creature" },
+        { word: "almighty", english: "almighty" },
+        { word: "peace", english: "peace" },
+        { word: "harmony", english: "harmony" },
+        { word: "strength", english: "strength" },
+        { word: "accept", english: "accept" },
+        { word: "bow down", english: "bow down" }
+      ]
+    },
+    {
+      name: "The Holy Ganga",
+      words: [
+        { word: "lifeline", english: "lifeline" },
+        { word: "sacred", english: "sacred" },
+        { word: "worshipped", english: "worshipped" },
+        { word: "cave", english: "cave" },
+        { word: "melt", english: "melt" },
+        { word: "international", english: "international" },
+        { word: "fame", english: "fame" },
+        { word: "journey", english: "journey" }
+      ]
+    },
+    {
+      name: "Sanjay the Brave Boy",
+      words: [
+        { word: "neglected", english: "neglected" },
+        { word: "company", english: "company" },
+        { word: "half-heartedly", english: "half-heartedly" },
+        { word: "tottered", english: "tottered" },
+        { word: "burst into", english: "burst into" },
+        { word: "chinned up", english: "chinned up" },
+        { word: "miserable", english: "miserable" },
+        { word: "pretended", english: "pretended" },
+        { word: "drowning", english: "drowning" },
+        { word: "canal", english: "canal" },
+        { word: "crutch", english: "crutch" },
+        { word: "astonished", english: "astonished" },
+        { word: "rescued", english: "rescued" }
+      ]
+    },
+    {
+      name: "Mr. Garbage and Mrs. Polythene",
+      words: [
+        { word: "garbage", english: "garbage" },
+        { word: "fall sick", english: "fall sick" },
+        { word: "pit", english: "pit" },
+        { word: "dangerous", english: "dangerous" },
+        { word: "utensils", english: "utensils" },
+        { word: "torn clothes", english: "torn clothes" },
+        { word: "destroy", english: "destroy" },
+        { word: "manure", english: "manure" }
+      ]
+    },
+    {
+      name: "Little Birdie (Poem)",
+      words: [
+        { word: "a little longer", english: "a little longer" },
+        { word: "stronger", english: "stronger" },
+        { word: "peep", english: "peep" },
+        { word: "rise", english: "rise" },
+        { word: "limbs", english: "limbs" }
+      ]
+    },
+    {
+      name: "A Good Citizen",
+      words: [
+        { word: "citizen", english: "citizen" },
+        { word: "tourist", english: "tourist" },
+        { word: "fountain", english: "fountain" },
+        { word: "bouquet", english: "bouquet" },
+        { word: "pluck", english: "pluck" },
+        { word: "tripped", english: "tripped" },
+        { word: "further", english: "further" },
+        { word: "suffering", english: "suffering" },
+        { word: "responsible", english: "responsible" }
+      ]
+    },
+    {
+      name: "The Responsible King",
+      words: [
+        { word: "irresponsible", english: "irresponsible" },
+        { word: "chariot", english: "chariot" },
+        { word: "moaned", english: "moaned" },
+        { word: "Wazir", english: "Wazir" },
+        { word: "cart", english: "cart" },
+        { word: "bother", english: "bother" },
+        { word: "flock", english: "flock" },
+        { word: "stunned", english: "stunned" },
+        { word: "deserves", english: "deserves" },
+        { word: "ashamed", english: "ashamed" }
+      ]
+    },
+    {
+      name: "Mahatma Gandhi",
+      words: [
+        { word: "devoted", english: "devoted" },
+        { word: "entire", english: "entire" },
+        { word: "upliftment", english: "upliftment" },
+        { word: "clutches", english: "clutches" },
+        { word: "bamboo yoke", english: "bamboo yoke" },
+        { word: "luxuries", english: "luxuries" },
+        { word: "obtain", english: "obtain" },
+        { word: "movement", english: "movement" },
+        { word: "ultimately", english: "ultimately" },
+        { word: "injustice", english: "injustice" },
+        { word: "inequality", english: "inequality" },
+        { word: "deity", english: "deity" },
+        { word: "contribution", english: "contribution" },
+        { word: "assassinated", english: "assassinated" }
+      ]
+    },
+    {
+      name: "The Swing (Poem)",
+      words: [
+        { word: "swing", english: "swing" },
+        { word: "pleasantest", english: "pleasantest" },
+        { word: "wide", english: "wide" },
+        { word: "cattle", english: "cattle" },
+        { word: "countryside", english: "countryside" }
+      ]
+    },
+    {
+      name: "Chandra Shekhar Azad",
+      words: [
+        { word: "fearless", english: "fearless" },
+        { word: "freedom fighter", english: "freedom fighter" },
+        { word: "disguised", english: "disguised" },
+        { word: "priest", english: "priest" },
+        { word: "provoked", english: "provoked" },
+        { word: "lashes", english: "lashes" },
+        { word: "mentor", english: "mentor" },
+        { word: "revolutionary", english: "revolutionary" },
+        { word: "massacre", english: "massacre" }
+      ]
+    },
+    {
+      name: "A Courageous Act",
+      words: [
+        { word: "fisherman", english: "fisherman" },
+        { word: "cyclone", english: "cyclone" },
+        { word: "expected", english: "expected" },
+        { word: "high tide", english: "high tide" },
+        { word: "flood", english: "flood" },
+        { word: "topple", english: "topple" },
+        { word: "rowed", english: "rowed" },
+        { word: "marooned", english: "marooned" },
+        { word: "authorities", english: "authorities" },
+        { word: "temporary", english: "temporary" }
+      ]
+    },
+    {
+      name: "Kabir",
+      words: [
+        { word: "saint", english: "saint" },
+        { word: "follower", english: "follower" },
+        { word: "writings", english: "writings" },
+        { word: "couplets", english: "couplets" },
+        { word: "thinker", english: "thinker" },
+        { word: "social reformer", english: "social reformer" },
+        { word: "bury", english: "bury" }
+      ]
+    },
+    {
+      name: "The Adorable Mother (Poem)",
+      words: [
+        { word: "lean", english: "lean" },
+        { word: "troubles", english: "troubles" },
+        { word: "scream", english: "scream" },
+        { word: "heart", english: "heart" },
+        { word: "soul", english: "soul" }
+      ]
+    },
+    {
+      name: "Florence Nightingale",
+      words: [
+        { word: "sheets", english: "sheets" },
+        { word: "properly", english: "properly" },
+        { word: "war", english: "war" },
+        { word: "secretly", english: "secretly" },
+        { word: "comfortable", english: "comfortable" },
+        { word: "superintendent", english: "superintendent" },
+        { word: "organization", english: "organization" }
+      ]
+    },
+    {
+      name: "Inspiration Helps",
+      words: [
+        { word: "expensive", english: "expensive" },
+        { word: "spending", english: "spending" },
+        { word: "boarding school", english: "boarding school" },
+        { word: "hurdle", english: "hurdle" },
+        { word: "excel", english: "excel" },
+        { word: "scholarship", english: "scholarship" },
+        { word: "gratitude", english: "gratitude" }
+      ]
+    },
+    {
+      name: "Save Water; Save Life",
+      words: [
+        { word: "conservation", english: "conservation" },
+        { word: "inaugural", english: "inaugural" },
+        { word: "adversely", english: "adversely" },
+        { word: "scarcity", english: "scarcity" },
+        { word: "migrate", english: "migrate" },
+        { word: "overcrowded", english: "overcrowded" },
+        { word: "accommodate", english: "accommodate" },
+        { word: "ruthless", english: "ruthless" },
+        { word: "voluntarily", english: "voluntarily" }
+      ]
+    },
+    {
+      name: "I Love Nature (Poem)",
+      words: [
+        { word: "morn", english: "morn" },
+        { word: "grey", english: "grey" },
+        { word: "waves", english: "waves" },
+        { word: "sea shells", english: "sea shells" },
+        { word: "crickets", english: "crickets" },
+        { word: "creatures", english: "creatures" },
+        { word: "lord", english: "lord" }
+      ]
+    }
+  ]
+}; // ✅ step 2 (your dataset here)
+
+  const chaptersData = allClasses[classId]; // ✅ step 3
   const chapterIndex = parseInt(chapterId.replace("chapter", "")) - 1;
-  const chapter = chaptersData[chapterIndex];
+  const chapter = chaptersData?.[chapterIndex];
 
   const [selectedWord, setSelectedWord] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
